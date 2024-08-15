@@ -1,14 +1,13 @@
 import { useState, useEffect, createContext, useContext } from "react";
-import Current from "./components/current";
-import TwelveHour from "./components/twelveHours";
-import Chart from "./components/chart/ChartCon";
-import fetchData from "./call";
-import { useLocationContext, useStyleContext } from "../../components/Context";
+import Current from "./current";
+import TwelveHour from "./twelveHours";
+import Chart from "./chart/ChartCon";
+import fetchData from "../assets/call";
+import { useLocationContext, useStyleContext } from "./Context";
 
 const dataContext = createContext({});
 
 function WeatherApp() {
-  const style = useStyleContext();
   const mobile: any = window.innerWidth <= 900;
   const location: any = useLocationContext();
   const [data, setData] = useState(undefined);
@@ -22,7 +21,7 @@ function WeatherApp() {
   const [mobileChart, setMobileChart] = useState(false);
 
   return (
-    <div className="app" style={style.app}>
+    <div className="app">
       {data ? (
         <dataContext.Provider value={data}>
           <Current />

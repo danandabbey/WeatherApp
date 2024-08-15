@@ -1,8 +1,7 @@
-import { useStyleContext } from "../../../../components/Context";
+import { useStyleContext } from "../Context";
 import Button from "./ChartButton";
 
 const Buttons = (props: any) => {
-  const style: any = useStyleContext();
   const { temperature, precipitation, humidity } = props;
 
   const buttons = [
@@ -20,7 +19,7 @@ const Buttons = (props: any) => {
     },
   ];
   return (
-    <div style={style.chartBtnCon}>
+    <div className={'chartBtnCon'}>
       {buttons.map((button) => {
         return (
           <Button

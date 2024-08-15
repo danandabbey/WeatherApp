@@ -1,5 +1,5 @@
 import axios from "axios";
-import { localContext } from "../../components/Context";
+import { localContext } from "../components/Context.tsx";
 
 const fetchData: any = async (location: any) => {
   const local = localContext;

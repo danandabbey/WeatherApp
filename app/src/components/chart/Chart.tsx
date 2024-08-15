@@ -1,5 +1,5 @@
 import { Line } from "react-chartjs-2";
-import { useStyleContext } from "../../../../components/Context";
+import { useStyleContext } from "../Context";
 
 import {
   Chart as ChartJS,
@@ -26,8 +26,7 @@ const Chart = (props: any) => {
   const mobile: boolean = window.innerWidth <= 900;
 
   const { data, time, title } = props;
-  const style = useStyleContext();
-  const color: any = style.chart.color;
+  const color = '#fff';
 
   let titleSize: number = mobile ? 30 : 60;
   let fontSize: number = mobile ? 12 : 20;

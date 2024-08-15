@@ -1,5 +1,5 @@
-import { useDataContext } from "../WeatherApp";
-import { useStyleContext } from "../../../components/Context";
+import { useDataContext } from "./WeatherApp";
+import { useStyleContext } from "./Context";
 
 const Forecast = (props: any) => {
   const { data } = props;
@@ -8,10 +8,10 @@ const Forecast = (props: any) => {
   const precipitation = `${data.precipitation}% chance`;
   const temp = `${data.temp}\u00b0F`;
   return (
-    <div style={style.forecast}>
-      <h3 style={style.forecast_name}>{name}</h3>
-      <h5 style={style.forecast_Item}>{precipitation}</h5>
-      <h5 style={style.forecast_Item}>{temp}</h5>
+    <div className={'forecast'}>
+      <h3 className={'forecast_name'}>{name}</h3>
+      <h5 className={'forecast_Item'}>{precipitation}</h5>
+      <h5 className={'forecast_Item'}>{temp}</h5>
     </div>
   );
 };
@@ -23,9 +23,9 @@ const TwelveHour = () => {
   const day_time = twelveHourData.filter((obj: any) => obj.isDayTime === true);
   const five = day_time.slice(0, 5);
   return (
-    <div style={style.twelveHourCon}>
-      <h1 style={style.twelveHourTitle}>Daily Forecast</h1>
-      <div style={style.twelveHour}>
+    <div className={'twelveHourCon'}>
+      <h1 className={'twelveHourTitle'}>Daily Forecast</h1>
+      <div className={'twelveHour'}>
         {five.map((obj: any) => {
           return <Forecast key={obj.name} data={obj} />;
         })}

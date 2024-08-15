@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
-import { useDataContext } from "../../WeatherApp";
-import { useStyleContext } from "../../../../components/Context";
+import { useDataContext } from "../WeatherApp";
+import { useStyleContext } from "../Context";
 import Chart from "./Chart";
 import Buttons from "./Buttons";
 
 const ChartCon = () => {
   const [currentChart, setCurrentData]: any = useState({});
-  const style: any = useStyleContext();
   const data: any = useDataContext();
   const time: any = data.chart.time;
   const chartData: any = data.chart.chart;
@@ -48,10 +47,10 @@ const ChartCon = () => {
   }, [data.chart]);
 
   return (
-    <div style={style.chartCon}>
-      <div style={style.chart_and_buttons}>
+    <div className={'chartCon'}>
+      <div className={'chart_and_buttons'}>
         <Chart
-          style={style.chart}
+            className={'chart'}
           time={time}
           title={currentChart.title}
           data={currentChart.data}

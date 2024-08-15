@@ -1,12 +1,12 @@
 import React from "react";
-import { useStyleContext } from "../../../components/Context";
+import { useStyleContext } from "./Context";
 
 const ChartOpenButton = (props): React.Component=> {
   const { setMobileChart } = props;
   const style = useStyleContext();
   return (
-    <div style={style.chartOpenButtonCon}>
-      <p style={style.chartOpenButton}>Open Chart</p>
+    <div className={'chartOpenButtonCon'}>
+      <p className={'chartOpenButton'}>Open Chart</p>
     </div>
   );
 };
